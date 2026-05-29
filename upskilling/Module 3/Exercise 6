@@ -1,0 +1,14 @@
+public class DataType {
+    public static void main(String[] args) {
+        int number = 100;
+        float decimal1 = 12.5f;
+        double decimal2 = 123.456;
+        char letter = 'A';
+        boolean status = true;
+        System.out.println("Integer value: " + number);
+        System.out.println("Float value: " + decimal1);
+        System.out.println("Double value: " + decimal2);
+        System.out.println("Character value: " + letter);
+        System.out.println("Boolean value: " + status);
+    }
+}
