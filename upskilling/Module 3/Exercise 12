@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class MethodOverloading {
+    static int add(int a, int b) {
+        return a + b;
+    }
+    static double add(double a, double b) {
+        return a + b;
+    }
+    static int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter first integer: ");
+        int x = sc.nextInt();
+        System.out.print("Enter second integer: ");
+        int y = sc.nextInt();
+        System.out.print("Enter first double value: ");
+        double d1 = sc.nextDouble();
+        System.out.print("Enter second double value: ");
+        double d2 = sc.nextDouble();
+        System.out.print("Enter first integer for 3-number addition: ");
+        int a = sc.nextInt();
+        System.out.print("Enter second integer for 3-number addition: ");
+        int b = sc.nextInt();
+        System.out.print("Enter third integer for 3-number addition: ");
+        int c = sc.nextInt();
+        System.out.println("Sum of two integers: " + add(x, y));
+        System.out.println("Sum of two doubles: " + add(d1, d2));
+        System.out.println("Sum of three integers: " + add(a, b, c));
+    }
+}
