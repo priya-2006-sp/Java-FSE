@@ -1,0 +1,86 @@
+console.log("Welcome to the Community Portal");
+window.onload = function(){
+    alert("Page Loaded Successfully");
+    let saved = localStorage.getItem("eventPreference");
+    if(saved){
+        document.getElementById("eventType").value = saved;
+    }
+};
+const eventName = "Tree Plantation";
+const eventDate = "2026-09-15";
+let seats = 50;
+console.log(`${eventName} on ${eventDate}`);
+function registerUser(){
+    try{
+        if(seats <= 0){
+            throw new Error("No Seats Available");
+        }
+        seats--;
+        document.getElementById("confirmation").value ="Registration Successful";
+    }
+    catch(error){
+        console.error(error.message);
+    }
+}
+function validatePhone(){
+    let phone = document.getElementById("phone").value;
+    if(/^[0-9]{10}$/.test(phone)){
+        document.getElementById("phoneMessage").innerHTML ="Valid Number";
+    }else{
+        document.getElementById("phoneMessage").innerHTML ="Invalid Number";
+    }
+}
+function showFee(){
+    let fee = document.getElementById("eventType").value;
+    document.getElementById("feeDisplay").innerHTML ="Fee ₹" + fee;
+}
+function countCharacters(){
+    let text =document.getElementById("feedback").value;
+    document.getElementById("charCount").innerHTML =text.length;
+}
+function enlargeImage(){
+    let img = document.getElementById( "feedbackImage");
+    img.style.width = img.style.width === "400px" ? "200px": "400px";
+}
+function videoReady(){
+    document.getElementById("videoMessage").innerHTML = "Video ready to play";
+}
+function savePreference(){
+    let value = document.getElementById("eventType").value;
+    localStorage.setItem("eventPreference",value
+);
+    sessionStorage.setItem("currentEvent",value);
+}
+function clearPreferences(){
+    localStorage.clear();
+    sessionStorage.clear();
+}
+function findLocation(){
+    navigator.geolocation.getCurrentPosition(
+        (position)=>{
+            document.getElementById("location").innerHTML = `Latitude: ${position.coords.latitude}
+             <br>
+             Longitude:${position.coords.longitude}`;
+        },
+        (error)=>{
+            console.error(
+                error.message
+            );
+        },
+        {
+            enableHighAccuracy:true,
+            timeout:10000,
+            maximumAge:0
+        }
+    );
+}
+document.getElementById("registrationForm").addEventListener("submit",function(event){
+    event.preventDefault();
+    registerUser()
+});
+window.onbeforeunload = function(){
+    let feedback = document.getElementById("feedback").value;
+    if(feedback.trim() !== ""){
+        return "Unsaved data exists.";
+    }
+};
