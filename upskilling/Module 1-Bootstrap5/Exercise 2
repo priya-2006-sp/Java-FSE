@@ -1,5 +1,0 @@
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<div class="container">
-    <h2>Using Downloaded Bootstrap Files</h2>
-</div>
-<script src="js/bootstrap.bundle.min.js"></script>
