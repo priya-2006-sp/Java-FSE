@@ -1,0 +1,24 @@
+public class Main {
+    public void greet() {
+        System.out.println(
+            "Welcome to Java"
+        );
+    }
+    public static void main(String[] args) {
+        Main obj = new Main();
+        obj.greet();
+    }
+}
+javac Main.java
+java -jar cfr.jar Main.class
+public class Main {
+    public void greet() {
+        System.out.println(
+            "Welcome to Java"
+        );
+    }
+    public static void main(String[] args) {
+        Main obj = new Main();
+        obj.greet();
+    }
+}
