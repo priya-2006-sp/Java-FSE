@@ -1,0 +1,40 @@
+//Module 1 : com.utils
+//module-info.java
+module com.utils {
+    exports com.utils;
+}
+//Utility.java
+package com.utils;
+public class Utility {
+    public static void display() {
+        System.out.println(
+            "Welcome to Java Modules"
+        );
+    }
+}
+//Module 2 : com.greetings
+//module-info.java
+module com.greetings {
+    requires com.utils;
+}
+//Main.java
+package com.greetings;
+import com.utils.Utility;
+public class Main {
+    public static void main(String[] args) {
+        Utility.display();
+    }
+}
+// COMMON EXAMPLE FILE
+class Utility {
+    public static void display() {
+        System.out.println(
+            "Welcome to Java Modules"
+        );
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Utility.display();
+    }
+}
