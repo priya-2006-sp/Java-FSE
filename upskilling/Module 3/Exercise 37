@@ -1,0 +1,34 @@
+public class Main {
+    public void display() {
+        System.out.println(
+            "Hello Java"
+        );
+    }
+    public static void main(String[] args) {
+        Main obj = new Main();
+        obj.display();
+    }
+}
+//Compile
+javac Main.java
+//Inspect Bytecode
+javap -c Main
+//sample output
+Compiled from "Main.java"
+public class Main {
+  public void display();
+    Code:
+       0: getstatic     #2
+       3: ldc           #3
+       5: invokevirtual #4
+       8: return
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #1
+       3: dup
+       4: invokespecial #5
+       7: astore_1
+       8: aload_1
+       9: invokevirtual #6
+      12: return
+}
