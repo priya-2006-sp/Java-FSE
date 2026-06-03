@@ -72,10 +72,6 @@ window.onbeforeunload = function(event) {
     }
 };
 
-/**
- * Custom Visual Console logger to display telemetry in the on-page simulation
- * AND execute real console native logger calls instantly (Requirement 10).
- */
 function addVisualLog(type, message, isWarning = false, isError = false) {
     const timestamp = new Date().toLocaleTimeString();
     
@@ -125,11 +121,7 @@ function clearConsoleTerminal() {
     console.log("[SYSTEM] Developer telemetry console cleared.");
 }
 
-/**
- * ==========================================================================
- * NAVIGATION AND SECTIONS MANAGEMENT
- * ==========================================================================
- */
+
 function navigateSection(sectionId, clickEvent) {
     console.log(`[NAVIGATION] User clicked route link to section identifier: ${sectionId}`);
     
@@ -154,12 +146,6 @@ function navigateSection(sectionId, clickEvent) {
     sessionStorage.setItem("current_view_tab", sectionId);
 }
 
-
-/**
- * ==========================================================================
- * REQUIREMENT 8: WEB STORAGE API MANAGEMENT
- * ==========================================================================
- */
 
 // Toggle Dark mode override setting and persist in LocalStorage
 function togglePortalDarkMode() {
@@ -217,12 +203,6 @@ function clearAllSystemCache() {
     alert("Wiped all cached LocalStorage settings and SessionStorage memory indices. Layout restored to defaults.");
 }
 
-
-/**
- * ==========================================================================
- * REQUIREMENT 4 & 6: GEOMETRY ENLARGEMENT ON DOUBLE-CLICK (ondblclick)
- * ==========================================================================
- */
 function enlargeGalleryImage(imgElement) {
     const imageUrl = imgElement.src;
     const hoverTitle = imgElement.getAttribute("title") || "Oakridge Civic Showcase Program";
@@ -250,12 +230,6 @@ function closeEnlargedImage() {
     }
 }
 
-
-/**
- * ==========================================================================
- * REQUIREMENT 5 & 6: ADVANCED CIVIC INPUT VERIFICATION & INPUT EVENTS
- * ==========================================================================
- */
 
 // BLUR EVENT: On-the-fly validation for individual name input
 function handleNameBlur() {
@@ -411,13 +385,6 @@ function processCivicRegistrationSubmit(event) {
     return true;
 }
 
-
-/**
- * ==========================================================================
- * REQUIREMENT 7: NATIVE MEDIA STREAM CONTROLS & MEDIA EVENTS
- * ==========================================================================
- */
-
 // Media Event: Fired once HTML5 video can start playing cleanly (oncanplay)
 function handlePromoVideoCanPlay() {
     const previewBadge = document.getElementById("video-status-indicator");
@@ -472,12 +439,6 @@ function handleVideoStateAction(actionType) {
     }
 }
 
-
-/**
- * ==========================================================================
- * REQUIREMENT 9: HIGH PRECISION CIVIC GEOLOCATION CONTROLLER
- * ==========================================================================
- */
 function acquireResidentGPSCoordinates() {
     const indicatorPanel = document.getElementById("gps-indicators-panel");
     const latSpan = document.getElementById("gps-val-latitude");
@@ -613,10 +574,6 @@ function applyVirtualDemoGPSLocks() {
 
     calculateProximityBounds(dummyLat, dummyLng);
 }
-
-// ==========================================================================
-// EXPOSE INTERACTIVE PLACEMENT SYSTEM UNTO THE GLOBAL WINDOW OBJECT
-// ==========================================================================
 window.navigateSection = navigateSection;
 window.togglePortalDarkMode = togglePortalDarkMode;
 window.clearAllSystemCache = clearAllSystemCache;
