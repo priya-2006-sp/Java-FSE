@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Utilities</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <!-- Hidden on all screens -->
+        <div class="d-none bg-danger text-white p-3 mb-3">
+            Hidden Section
+        </div>
+
+        <!-- Visible from Medium screens -->
+        <div class="d-none d-md-block bg-primary text-white p-3 mb-3">
+            Visible on Medium and Large Screens
+        </div>
+        <div class="d-none d-lg-flex bg-success text-white p-3 justify-content-between">
+            <div>
+                Left Content
+            </div>
+            <div>
+                Right Content
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
