@@ -1,15 +1,3 @@
-/**
- * ==========================================================================
- * Local Community Event Portal - Interactive JavaScript Controller (script.js)
- * Fulfills all lab assignments constraints:
- * - Event Listeners: onblur, onchange, onclick, ondblclick, onkeyup, oncanplay, onbeforeunload
- * - Storage engines: localStorage, sessionStorage
- * - Navigation Sensors: navigator.geolocation.getCurrentPosition with accurate flags
- * - Console logs: console.log, console.warn, console.error
- * - Dynamic Dom edits, form compilation inside output tag
- * ==========================================================================
- */
-
 // Global constant array of events matching table coordinates
 const PORTAL_CATALOG_EVENTS = [
     { title: "Oakridge Woodland Reforestation", date: "2026-06-05" },
